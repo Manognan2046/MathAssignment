@@ -1,0 +1,865 @@
+\documentclass[12pt]{exam}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\printanswers
+
+\title{UNIT - 5}
+\author{Chinthamaduka Manognan}
+
+
+\begin{document}
+\maketitle
+
+\section{Picard's Method:}
+
+Consider the first order equation 
+\begin{align*}
+    \frac{d y}{d x}=f(x, y) \tag{1}\\
+\end{align*}
+
+It is required to find that particular solution of (1) which assumes the value $y_{0}$ when $x=x_{0}$. Integrating (1) between limits, we get
+
+\begin{align*}
+& \int f(x, y) d x \quad \text { (or) } f(x, y) d y  \tag{2}\\[10pt]
+& y=y_{0}+\int f(x, y) d x .
+\end{align*}
+
+This is an integral equivalent to (1), for it contains the unknown $y$ under the integral sign.\\
+As a first approximation $y_{1}$ to the solution, be put $y=y_{0}$ in $f(x, y)$ and integrate (2), giving
+
+$$
+y_{1}=y_{0}+\int_{x_{0}}^{x} f\left(x, y_{0}\right) d x
+$$
+
+For a second approximation $y_{2}$, we pat $y=y_{1}$ in $f(x, y)$ and integrate (2), giving
+
+$$
+y_{2}=y_{0}+\int_{x_{0}}^{x} f\left(x, y_{1}\right) d x .
+$$
+
+continuing this process, we obtain $y_{31} y_{4}, \ldots . y_{n}$, where
+
+$$
+y_{n}=y_{0}+\int_{x_{0}}^{x} f\left(x, y_{n-1}\right) d x
+$$
+
+$\therefore$ this method gives a better result than the proceeding one.\\[10pt]
+
+
+\newpage
+
+
+\section{Taylor's Series Method:}
+Consider the first order eq. $\frac{d y}{d x}=f(x, y)$.\\[10pt]
+differentiating (1), we have $\frac{d^{2} y}{d x^{2}}=\frac{\partial f}{\partial x}+\frac{\partial f}{\partial y} \frac{d y}{d x}$ ie
+
+
+\begin{equation*}
+y^{\prime \prime}=f x+f y f^{\prime} \tag{2}
+\end{equation*}
+
+
+Differentiating this successfully we can get $y^{\prime \prime \prime}, y^{\prime v}$, etc. Putting $x=x_{0}$ and $y=0$, the values $\left(y^{\prime}\right)_{0},\left(y^{\prime \prime}\right)_{0},\left(y^{\prime \prime}\right)_{0}$ can be obtained. Hence the taylor's series\\
+
+
+\begin{equation*}
+y=y_{0}+\left(x-x_{0}\right)\left(y_{0}^{\prime}\right)+\frac{\left(x-x_{0}\right)^{2}}{2!}\left(y^{\prime \prime}\right)_{0}+\frac{\left(x-x_{0}\right)^{3}}{3!}\left(y_{0}^{\prime \prime \prime}\right)+. \tag{3}
+\end{equation*}
+\\[15pt]
+
+gives the values of $y$ for very value of $x$ for which it converges.\\[15pt]
+On finding the value $y_{i}$ for $x=x_{i}$ from (3, $y^{\prime}, y^{\prime \prime}$ etc can be evaluated at $x=x_{i}$ by means of (1), (2).\\[15pt]
+Then $y$ can be expanded about $x=x$; in this way, the sol can be extended beyond the range of convergence of series (3).\\
+
+
+\newpage
+
+
+\section{Runge - Kutta Method:}
+Working rule for finding the interment $k$ of $y$ corresponding to an increment $h$ of $x$ by Range kutta method from
+
+$$
+\frac{d y}{d x}=f(x, y) \cdot y\left(x_{0}\right) .
+$$
+
+Calculate
+
+$$
+\begin{aligned}
+& k_{1}=h f\left(x_{0}, y_{0}\right) \\
+& k_{2}=h f\left(x_{0}+\frac{h}{2}, y_{0}+\frac{k_{1}}{2}\right) \\
+& k_{3}=h f\left(x_{0}+\frac{h}{2}+y_{0}+\frac{k_{2}}{2}\right) \\
+& k_{4}=h f\left(x_{0}+h, y_{0}+k_{3}\right) . \\
+& k=\frac{1}{6}\left(k_{1}+2 k_{2}+2 k_{3}+k_{4}\right) .
+\end{aligned}
+$$
+
+where $y_{1}=y_{0}+k$.\\
+
+\newpage
+
+\section*{Questions with Solutions:}
+\begin{questions}
+    \question Picard's Method:
+        \begin{parts}
+            \part 
+                Solve by Picard's method (upto third approximation)$$\frac{d y}{d x}=x+y^{2}$$, $y(0)=0$ also find $y(0.1)$.\\
+            \begin{solution}
+                $f(x, y)=x+y^{2} \quad, \quad\left(x_{0}, y_{0}\right)=(0,0)$ from given condition.\\
+                Put $n=0, Y_{1}=Y_{0}+\int_{x_{0}}^{x} f\left(X, Y_{0}\right) d x$
+            
+                \begin{align*}
+                y_{1} & =y_{0}+\int_{x_{0}}^{x} f\left(x, y_{0}\right) d x \\
+                y_{1} & =0+\int_{0}^{x}(x+0) d x \\
+                y_{1} & =\frac{x^{2}}{2}  \tag{1}\\
+                y_{2} & =y_{0}+\int_{0}^{x} f\left(x, y_{1}\right) d x \\
+                y_{2} & =0+\int_{0}^{x}\left(x+\frac{x^{4}}{4}\right) d x
+                \end{align*}
+                
+                
+                $$
+                y_{2}=\frac{x^{2}}{2}+\frac{x^{5}}{20} .
+                $$
+                
+                put $n=2$.
+                
+                $$
+                \begin{aligned}
+                \text { pul } n & =2 . \\
+                y_{3} & =y_{0}+\int_{x_{0}}^{x} f\left(x, y_{2}\right) d x \\
+                & =0+\int_{0}^{x}\left(x+\frac{x^{4}}{4}+\frac{x^{2}}{20}+\frac{x^{10}}{400}\right) d x \\
+                y_{3} & =\frac{x^{2}}{2}+\frac{x^{5}}{20}+\frac{x^{8}}{160}+\frac{x^{11}}{4400} \\
+                y(0.0) y & =\frac{(0.1)^{2}}{2}+\frac{(0.1)^{5}}{20}+\frac{(0.1)^{8}}{160}+\frac{(0.1)^{11}}{4400} .
+                \end{aligned}
+                $$
+            \end{solution}
+
+    \newpage
+    
+            \part
+                Solve by Picard method, find successive approximate sol upto $4^{\text {th }}$ order of IVP
+                $$
+                y^{\prime}+y=e^{x} \quad, \quad y(0)=0
+                $$
+            \begin{solution}       
+                $$
+                \begin{aligned}
+                & \frac{d y}{d x}+y=e^{x} \\
+                & \frac{d y}{d x}=e^{x}-y \\
+                & f(x, y)=e^{x}-y, \quad\left(x_{0}, y_{0}\right)=(0,0) .
+                \end{aligned}
+                $$
+                
+                we k, $y_{n+1}=y_{0}+\int_{x_{0}}^{x} f\left(x, y_{n}\right) d x$.
+                
+                $$
+                y_{1}=y_{0}+\int_{x_{0}}^{x} f\left(x, y_{0}\right) d x
+                $$
+                
+                $$
+                \begin{gathered}
+                y_{1}=0+\int_{0}^{x} f(x, 0) d x \\
+                y_{1}=\int_{0}^{x}\left(e^{x}-0\right) d x \\
+                y_{1}=\left[e^{x}\right]_{0}^{x}=e^{x}-1 .
+                \end{gathered}
+                $$
+                
+                put $n=1$.
+                
+                $$
+                \begin{aligned}
+                y_{2} & =y_{0}+\int_{x_{0}}^{x} f\left(x, y_{1}\right) d x \\
+                y_{2} & =0+\int_{0}^{x} f\left(x, y_{1}\right) d x \\
+                & =\int_{0}^{x}\left(e^{x}-\left(e^{x}-1\right)\right) d x \\
+                y_{2} & =]_{0}^{x} \text { (2) }=x
+                \end{aligned}
+                $$
+                
+                put $n=2$.
+                
+                $$
+                \begin{aligned}
+                y_{3} & =y_{0}+\int_{0}^{x} f\left(x, y_{2}\right) d x \\
+                & =0+\int_{0}^{x}\left(e^{x}-x\right) d x \\
+                y_{3} & =\left[e^{x}-x^{2} / 2\right]_{0}^{1}=e^{x}-x^{2} / 2-1
+                \end{aligned}
+                $$
+                
+                put $n=3$.
+                
+                $$
+                \begin{aligned}
+                y_{4} & =0+\int_{0}^{x}\left(e^{x}-e^{x}+x^{2} / 2+1\right) d x \\
+                y_{4} & =\frac{x^{3}}{6}+x
+                \end{aligned}
+                $$
+            \end{solution}
+
+        \newpage
+
+            \part
+                Solve $\frac{d y}{d x}=1+x y$ with $x_{0}=0, y_{0}=0$. unto third approximate.
+    
+            \begin{solution}
+                Given $\quad y^{\prime}=1+x y=f(x, y)$.\\
+                and $\left(x_{0}, y_{0}\right)=(0,0)$.\\
+                By picard's method of successive approximation, we have $y=y_{0}+\int_{x_{0}}^{x} f(x, y) d x$.
+                
+                First approximation:
+                
+                $$
+                y_{1}=y_{0}+\int_{x_{0}}^{x} f\left(x, y_{0}\right) d x
+                $$
+                
+                Here $x_{0}=0, y_{0}=0$.
+                
+                $$
+                \begin{aligned}
+                & x_{0}=0, y_{0}=0 \\
+                & \therefore y_{1} \\
+                & \therefore y_{1} \\
+                & y_{0} \\
+                & =0+\int_{0}^{x} f(x, 0) d x \\
+                & \\
+                & \\
+                & =[x]_{0}^{x}(1+x, 0) d x \\
+                & \\
+                &
+                \end{aligned}
+                $$
+                
+                Second approximation:
+                
+                $$
+                \begin{aligned}
+                \therefore y_{2} & =y_{0}+\int_{x_{0}}^{x} f\left(x, y_{i}\right) d x . \\
+                & =0+\int_{0}^{x} f(1+x \cdot x) d x \\
+                & =\int_{0}^{x}\left(1+x^{2}\right) d x \\
+                & =\left|x+\frac{x^{3}}{3}\right|_{0}^{x} \\
+                & =x+\frac{x^{3}}{3}
+                \end{aligned}
+                $$
+                
+                Third approximation:
+                
+                $$
+                \begin{aligned}
+                y_{3} & =y_{0}+\int_{x_{0}}^{x} f\left(x, y_{2}\right) d x \\
+                & =0+\int_{0}^{x} f\left(x, y_{2}\right) d x \\
+                & =\int_{0}^{x}\left(1+x^{2}+\frac{x^{4}}{3!}\right) d x \\
+                & =\sum_{0}\left[x+\frac{x^{3}}{3}+\frac{x^{5}}{3 \times 5}\right]_{0}^{5} \\
+                & =x+\frac{x^{3}}{3}+\frac{x^{5}}{15}
+                \end{aligned}
+                $$
+            \end{solution}
+
+            \newpage
+            
+            \part 
+                Solve $\frac{d y}{d x}=x - y$ with $x_{0}=0, y_{0}=1$ upto third approximation, when $x=0.2$\\
+
+            \begin{solution}
+                Here $f(x, y)=x-y$ and $x_{0}=0, y_{0}=1$
+
+                $$
+                y=y_{0}+\int_{x_{0}}^{x} f(x, y) d x
+                $$
+                
+                First approximation:
+                
+                $$
+                \begin{aligned}
+                y_{1} & =y_{0}+\int_{x_{0}}^{x} f\left(x, y_{0}\right) d x \\
+                & =y_{0}+\int_{0}^{x}(x-1) d x \\
+                & =1+\left|\frac{x^{2}}{2}-x\right|_{0}^{x} \\
+                y_{1} & =\frac{x^{2}}{2}-x+1 \quad \text { then } \\
+                y(0.2) & =\frac{(0.2)^{2}}{2}-0.2+1=0.82
+                \end{aligned}
+                $$
+                
+                Second approximation:
+                
+                $$
+                \begin{aligned}
+                y_{2} & =y_{0}+\int_{x_{0}}^{x} f\left(x, y_{1}\right) d x \\
+                & =y_{0}+\int_{0}^{x} \cdot\left(x-y_{1}\right) d x \\
+                & =1+\int_{0}^{x}\left(x-\frac{x^{2}}{2}+x-1\right) d x \\
+                & =1+\left[\frac{2 x^{2}}{2}-\frac{x^{3}}{6}-x\right)
+                \end{aligned}
+                $$
+                
+                $$
+                y(0.2)= 0.04-0.003=0.8387
+                $$  
+            \end{solution}
+        \end{parts}
+
+        \newpage
+\question Euler's Method:
+\begin{parts}
+    \part Solve $\frac{d y}{d x}=x+y$ with boundary condition $y$, at $x=0$. find approximate value of $y$ for $x=0.1$.
+
+    \begin{solution}
+        $\quad f(x, y)=x+y$\\
+        take steps $=5$ as it is not mentioned.
+        
+        $$
+        \begin{aligned}
+        & h=\frac{0.1}{5}=0.02 . \\
+        & x_{0}=0 \quad y_{0}=0 \text {. } \\
+        & x_{1}=0.02 \quad y_{1}=1.02 \\
+        & x_{2}=0.04 \quad y_{2}=1.0408 \text {. } \\
+        & \begin{array}{ll}
+        x_{3}=0.06 & y_{3} \\
+        x_{4} &
+        \end{array} \\
+        & x_{4}=0.08 \quad y_{4} \\
+        & x_{5}=0.1 \quad y_{5} \text {. } \\
+        & y_{n+1}=y_{n}+h f\left(x_{n}, y_{n}\right) \\
+        & n=0: \\
+        &y_{1}=y_{0}+(0.02) f(0,1) \text {. } \\
+        & =1+0.02 \text { (1) } \\
+        & y_{1}=1.02 \text {. } \\
+        & n=1: \\
+        &\quad y_{2}=y_{1}+(0.02) f\left(x_{1}, y_{1}\right) \text {. } \\
+        & \begin{array}{l}
+        =1.02+(0.02)(0.02+1.02) . \\
+        =1.0408
+        \end{array}
+        \end{aligned}
+        $$
+        
+        $$
+        \begin{aligned}
+        \Rightarrow y_{3} & =y_{2}+(0.02) f_{0}\left(x_{2}, y_{2}\right) . \\
+        \Rightarrow y_{3} & =1.0408+(0.02)(0.04+1.0408) . \\
+        & =1.0624 . \\
+        \Rightarrow y_{4} & =1.0624+(0.02)(0.06+1.06224) \\
+        & =1.0848 . \\
+        \Rightarrow y_{5} & =1.0848+(0.02)(0.08+1.0848) \\
+        y_{5} & =1.168
+        \end{aligned}
+        $$
+    \end{solution}
+
+\newpage
+    \part Given that $\frac{d y}{d x}=y-x$ where $y(0)=2$, find $y(0.1)$ and $y(0.2)$ by Eulers method pto 2 decimal plats.\\
+
+    \begin{solution}
+        $$
+        \frac{d y}{d x}=y-x=f(x, y), \quad y(0)=2 . .
+        $$
+        
+        take step size $=0.1=h$.
+        
+        $$
+        \begin{aligned}
+        x_{0} & =0 \\
+        x_{1} & =0.1 \\
+        x_{2} & =0.2 \\
+        & y_{1}=y_{0}+h\left(f\left(x_{0}, y_{0}\right)\right) \\
+        & y_{1}=2+(0.1)(2-0) \\
+        y(0.1) & =2.2
+        \end{aligned}
+        $$
+        
+        $$
+        \begin{aligned}
+        & y_{2}=y_{1}+h\left(f\left(x_{1}, y_{1}\right)\right) \\
+        & y_{2}=2.2+(0.1)(2.2-0.1) \\
+        & y(0.2)=2.41
+        \end{aligned}
+        $$
+    \end{solution}
+\end{parts}
+
+\newpage
+
+\question Runge - Kutta method of $4^{\text {th }}$ Order:\\
+\begin{parts}
+    \part Given $\frac{d y}{d x}=x+y^{2}, y(0)=1$, find $y(0.2), h=0.1$
+
+    \begin{solution}
+        $$
+        \begin{array}{lll}
+        f(x, y)=x+y^{2} & x_{0}=0 . & y_{0}=1 . \\
+        & x_{1}=0.1 & y_{1}= \\
+        x_{2}=0.2 & y_{2}=
+        \end{array}
+        $$
+        
+        $$
+        \begin{aligned}
+        \text { put } \begin{aligned}
+        n=0
+        \end{aligned} & =h f\left(x_{0}, y_{0}\right) . \\
+        k_{1} & =h\left(x_{0}+y_{0}^{2}\right) . \\
+        & =h\left(0+(1)^{2}\right) . \\
+        & =0.1\left(y_{0}\right) \\
+        & =0.1 \\
+        n=1 \quad k_{2} & =h f\left(x_{0}+h / 2, y_{0}+k_{1} / 2\right) \\
+        n=2 \quad k_{3} & =h f\left(x_{0}+h / 2, y_{0}+k_{2} / 2\right) \\
+        n=3 \quad k_{4} & =h f\left(x_{0}+h, y_{0}\right) \\
+        k_{2}= & 0.1)\left[\left(0+\frac{0.1}{2}\right)+\left(1+\frac{0.1}{2}\right)^{2}\right] \\
+        & =0.11525 .
+        \end{aligned}
+        $$
+        
+        $$
+        \begin{aligned}
+        & =h\left(x_{0}+\frac{h}{2}, y_{0}+\frac{k_{2}}{2}\right) \\
+        & =0.1\left[\left(0+\frac{0.1}{2}\right)+\left(1+\frac{0.11525}{2}\right)^{2}\right] \\
+        & =0.1169 \\
+        k_{4} & =0.1\left[(0+0.1)+(1+0.1169)^{2}\right] \\
+        & =0.1347 . \\
+        k & =\frac{1}{6}\left(k_{1}+2 k_{2}+2 k_{3}+k_{4}\right] \\
+        k & =0.1165 \\
+        y_{1} & =y_{0}+k . \\
+        & =1+0.1165 \\
+        & =1.1165
+        \end{aligned}
+        $$
+        \\[15pt]
+        $$
+        \begin{aligned}
+        \text { put } n=1
+        \end{aligned} \quad \begin{aligned}
+        & k_{1}=h f\left(x_{1}, y_{1}\right) \\
+        &=(0.1)(0.1+1.1165) \\
+        &=0.1347 \\
+        & k_{2}=h f\left(x_{1}+h / 2, y_{1}+k_{1} / 2\right)=\pi\left[\left(x_{1}+h / 2\right), y_{1}+k_{1} / 2\right] \\
+        &=0.1\left[\left(0.1+\frac{0.1}{2}\right)+\left(10.1165+\frac{0.1347}{2}\right)^{2}\right] \\
+        &=0.1552
+        \end{aligned}
+        $$
+        
+        $$
+        \begin{aligned}
+        k_{3} & =h f\left(x_{1}+\frac{h}{2}, y_{1}+\frac{k_{2}}{2}\right) \\
+        & =0.1\left(\left(0.1+\frac{0.1}{2}\right)+\left(0.1165+\frac{0.1152}{2}\right)^{2}\right) \\
+        & =0.1576 . \\
+        k_{4} & =h f\left(x_{1}+h, y_{1}+k_{3}\right) \\
+        & =h\left[(0.1+0.1)+(1.1165+0.1576)^{2}\right) \\
+        & =0.1823 \\
+        k & =\frac{1}{6}\left(k_{1}+2 k_{2}+2 k_{3}+k_{4}\right)=0.1572 . \\
+        y_{2} & =y_{1}+k . \\
+        & =1.0165+0.1572 . \\
+        & =1.2737
+        \end{aligned}
+        $$
+    \end{solution}
+
+\newpage 
+
+    \part Apply Runge-Kutta method of $4^{\text {th }}$ order, Solve. $\frac{d y}{d x}=\frac{y^{2}-x^{2}}{y^{2}+x^{2}}$ with $y(0)=1$ at $x=0,2$ and $x=0.4$.\\
+
+    \begin{solution}
+        $f(x, y)=\frac{y^{2}-x^{2}}{y^{2}+x^{2}}, \quad\left(x_{0}, y_{0}\right)=(0,1)$\\
+        taking $h=0.2 \quad \Rightarrow x_{1}=x_{0}+h=0.2$.
+        
+        $$
+        \begin{aligned}
+        k_{1}=h\left(f\left(x_{0}, y_{0}\right)\right)=0.2 f(0,1) & =0.2 . \\
+        k_{2}=h\left(f\left(x_{0}+\frac{h}{2}, y_{0}+\frac{k_{1}}{2}\right)\right) & =0.2\left(\frac{1.1^{2}-0.1^{2}}{1.1^{2}+0.1^{2}}\right) \\
+        & =0.1967 .
+        \end{aligned}
+        $$
+        
+        $$
+        \begin{aligned}
+        & \text { h. } f\left(x_{0}+\frac{h}{2} z, y+\frac{k_{2}}{2}\right)=0.2\left(\frac{1.0984^{2}-0.1^{2}}{1.0984^{2}+0.1^{2}}\right)=0.1967^{5} \\
+        & k_{4}=h f\left(x_{0}+h t, y_{0}+k_{3}\right) \\
+        & =(0.2)\left(\frac{1.1967^{2}-0.2^{2}}{1.1967^{2}+0.2^{2}}\right) \\
+        & k=\frac{1}{6}\left(k_{1}+2 k_{2}+2 k_{3}+k_{4}\right)=0.1960 \\
+        & y_{1}=y(0.2)=y_{0}+k=1+0.1960 . \\
+        & =1.1960 . \\
+        & x_{2}=x_{1}+h= \\
+        & =0.4 \text {. } \\
+        & k_{1}=h f\left(x_{1}, y_{1}\right) \\
+        & =(0.2)\left(\frac{1.1960^{2}-0.2^{2}}{1.1960^{2}+0.2^{2}}\right) \text {. } \\
+        & =0.1891 . \\
+        & k_{2}=h f\left(x_{1}+\frac{h}{2}, y_{1}+\frac{k_{1}}{2}\right) \text {. } \\
+        & =h f(0.3,1.2906) . \\
+        & =0.1795 \text {. } \\
+        & k_{3}=h f\left(x_{1}+\frac{h}{2}, y_{1}+\frac{k_{2}}{2}\right) \\
+        & \begin{array}{l}
+        =h f(0.3,1.2858) \\
+        =0.193
+        \end{array}
+        \end{aligned}
+        $$
+        
+        $$
+        \begin{aligned}
+        k_{4} & =(-0.2) \quad f(0.4,1.3753) \\
+        & =0.1688 .
+        \end{aligned}
+        $$
+        
+        $$
+        \begin{aligned}
+        k & =\frac{1}{6}\left(k_{1}+2 k_{2}+2 k_{3}+k_{4}\right) . \\
+        & =0.1792 .
+        \end{aligned}
+        $$
+        
+        $$
+        \begin{aligned}
+        y_{2}=y(0.4) & =y_{1}+k \\
+        & =1.1960+0.1792 \\
+        & =1.3752
+        \end{aligned}
+        $$
+        
+    \end{solution}
+
+\newpage
+
+    \part Use the RKY method with $h=0.1$ to obtain a four decimal approximation of the indicated value. $y^{\prime}=2 x-3 y+1, y(1)=5$, approximate $y(1.2)$\\
+
+\begin{solution}
+    Given $(x_0, y_0) = (1, 5)$,
+    $$
+    f(x, y) = 2x - 3y + 1.
+    $$
+
+    We know that,
+    $$
+    \begin{aligned}
+    y_1 &= y_0 + \frac{h}{6} \left( k_1 + 2k_2 + 2k_3 + k_4 \right), \\
+    k_1 &= f(x_0, y_0), \\
+    k_2 &= f\left( x_0 + \frac{h}{2}, y_0 + \frac{h}{2} k_1 \right), \\
+    k_3 &= f\left( x_0 + \frac{h}{2}, y_0 + \frac{h}{2} k_2 \right), \\
+    k_4 &= f\left( x_0 + h, y_0 + h k_3 \right).
+    \end{aligned}
+    $$
+
+    \noindent Now, calculate the values for $k_1$, $k_2$, $k_3$, and $k_4$:
+
+    $$
+    k_1 = f(1, 5) = 2(1) - 3(5) + 1 = -12,
+    $$
+
+    $$
+    k_2 = f\left( 1 + \frac{1}{2}(0.1), 5 + \frac{1}{2}(0.1)(-12) \right)\\
+    = f(1.05, 4.4) = 2(1.05) - 3(4.4) + 1 = -10.1,
+    $$
+
+    $$
+    k_3 = f\left( 1.05, 5 + (0.05)(-10.1) \right) = f(1.05, 4.495) = 2(1.05) - 3(4.495) + 1 = -10.385,
+    $$
+
+    $$
+    k_4 = f\left( 1.1, 5 + (0.1)(-10.385) \right) = f(1.1, 3.9615) = 2(1.1) - 3(3.9615) + 1 = -8.6845.
+    $$
+
+    Finally, we compute $y_1$:
+
+    $$
+    y_1 = 5 + \frac{0.1}{6} \left( -12 + 2(-10.1) + 2(-10.385) + (-8.6845) \right) = 3.972425 \approx y(1.1).
+    $$
+
+    \text{Second iteration:}
+
+    $$
+    (x_1, y_1) = (1.1, 3.972).
+    $$
+
+    Now, repeat the process for the second iteration:
+
+    $$
+    y_2 = y_1 + \frac{h}{6} \left( k_1 + 2k_2 + 2k_3 + k_4 \right),
+    $$
+
+    $$
+    k_1 = f(1.1, 3.972) = 2(1.1) - 3(3.972) + 1 = -8.76,
+    $$
+
+    $$
+    k_2 = f\left( 1.1 + \frac{h}{2}, 3.972 + \frac{h}{2} k_1 \right) = -8.959,
+    $$
+
+    $$
+    k_3 = f\left( 1.15, 3.972 + \frac{h}{2} (-8.959) \right) = -8.0190,
+    $$
+
+    $$
+    k_4 = f(1.2, 3.972 + (0.1)(-8.0190)) = -6.25979.
+    $$
+
+    Finally, we compute $y_2$:
+
+    $$
+    y_2 = 3.972 + \frac{0.1}{6} \left( -8.76 + 2(-8.959) + 2(-8.0190) + (-6.25979) \right) = 5.4641 \approx y(1.2).
+    $$
+
+\end{solution}
+
+
+\end{parts}
+
+\newpage
+
+\question Taylor's Method:\\
+\begin{parts}
+    \part Solve $\frac{d y}{d x}=x+y$ by taylor series method, start from. $x=1, y=0$ and carry to $x=1.2$. with $h=0.1$.\\
+
+    \begin{solution}
+        $f(x, y)=x+y, \quad\left(x_{0}, y_{0}\right)=(1,0), h=0.1$.
+        $$
+        \begin{aligned}
+        x_{1} & =1.1 \\
+        y_{1} & =y_{0}+\frac{h}{1!} y_{0}^{\prime}+\frac{h^{2}}{2!} y_{0}^{\prime \prime}+\cdots \\
+        & =0+0.1(1)+\frac{(0.1)^{2}}{2}(2)+\frac{(0.1)^{3}}{3!}(2) \\
+        & =0.11034 \\
+        & \approx 0.103 \\
+        & \approx 0.1103
+        \end{aligned}
+        $$
+        
+        $$
+        \begin{aligned}
+        & \text { Given } \\
+        & \begin{array}{l}
+        y^{\prime}=x+y=1 \\
+        y^{\prime \prime}=1+y^{\prime}=2 \\
+        y^{\prime \prime \prime}=y^{\prime \prime}=2 \\
+        y^{\prime \prime}=y^{\prime \prime \prime}=2
+        \end{array}
+        \end{aligned}
+        $$
+        
+        $$
+        \begin{aligned}
+        x_{2} & =x_{1}+h \\
+        & =1.1+0.1 \\
+        & =1.2 . \\
+        y_{1}^{\prime} & =x_{1}+y_{1}=1.1+0.1103=1.2103 . \\
+        y_{7}^{\prime \prime} & =y_{1}^{\prime}+1=2.2103 . \\
+        y_{1}^{\prime \prime \prime} & =y_{1}^{\prime \prime}=2.2103 \\
+        y_{1}^{\prime \prime} & =y_{1}^{\prime \prime}=2.20103 .
+        \end{aligned}
+        $$
+        
+        $$
+        \begin{aligned}
+        y_{2} & =y_{1}+\frac{h}{1!} y_{1}^{\prime}+\frac{h^{2}}{2!} y_{1}^{\prime \prime}+\frac{h^{3}}{3!} y_{1}^{\prime \prime \prime}+\cdots \\[5pt]
+        & =0.1103+\frac{(0.1)^{2}}{1}(1.20103)+\frac{(0.1)^{2}}{2}(2.2103)+\frac{(0.1)}{3!} \\
+        & \approx 0.24276 . \\
+        & \approx 0.2428 .
+        \end{aligned}
+        $$
+    \end{solution}
+
+    \newpage
+
+    \part Solve the initial value problem $y^{\prime}=-2 x y^{2}, y(0)=1$ for $y$ at $x=1$ with step length 0.2 using taylor series method.
+
+    \begin{solution}
+        $$
+        \begin{aligned}
+        & \text { given } y^{\prime \prime}=-2 x y^{2} . \\
+        & f(x, y)=-2 x y^{2} \quad \text { and }\left(x, y y_{0}\right)=(0,1), h=0.2 \\
+        & y^{\prime \prime}=-2 y^{2}-4 x y y^{\prime} \\
+        & y^{\prime \prime \prime}=-8 y y^{\prime}-4 x y^{\prime 2}-4 x y y^{\prime \prime} \\
+        & y^{\prime \prime}=-12 y^{\prime 2}-12 y y^{\prime \prime}-12 x y^{\prime} y^{\prime \prime}-4 x y y^{\prime \prime \prime} \\
+        & \vdots \\
+        & y_{1}= y_{0}+\frac{h}{1!} y_{0}^{\prime}+\frac{h^{2}}{2!} y_{0}^{\prime \prime}+\frac{h^{3}}{3!} y_{0}^{\prime \prime \prime}+\cdots .
+        \end{aligned}
+        $$
+        
+        $$
+        \begin{aligned}
+        & \text { for }\left(x_{0}, y_{0}\right), \text { we have } \\
+        & y_{0}^{\prime}=0 \\
+        & y_{0}^{\prime \prime}=-2(1)^{2}-4(0)=-2 \\
+        & y_{0}^{\prime \prime \prime}=0-8(1)(0)-4(0)=0 \\
+        & y_{0}^{\prime \prime}=-12(0)-12(1)(-2)-12(0)-4(0)=24 \ldots \\
+        & y(0.2)=1+0.2(0)+\frac{0.2^{2}(-2)}{2}+0+\frac{2^{4}(24)}{4!}
+        \end{aligned}
+        $$
+        
+        $$
+        =0.9615 .
+        $$
+        
+        now at $x=0.2$ we have $y=0.9 \$ 615$.\\
+        and substituting $\left(x_{1}, y_{1}\right)=(0.2,0.9615)$ we get
+        
+        $$
+        \begin{aligned}
+        y_{1}^{\prime} & =-0.3699 \\
+        y_{1}^{\prime \prime} & =-1.5648 \\
+        y_{1}^{\prime \prime \prime} & =3.9397 \\
+        y_{1}^{\prime \prime} & =11.9953 \\
+        y(0,4) & =y_{1}+\frac{h}{1!}\left(y_{i}^{\prime}\right)+\frac{h^{2}}{2!}\left(y_{i}^{\prime \prime}\right)+\frac{h^{3}}{3!}\left(y_{1}^{\prime \prime \prime}\right)+\ldots .
+        \end{aligned}
+        $$
+        
+        $$
+        \begin{aligned}
+        y(0.4) & =0.9+0.2(-0.3899)+\frac{0.2^{2}(-1.5648)}{2!}+\frac{(0.2)^{3}(3.9397)}{3!}+\ldots \\
+        & =0.8624
+        \end{aligned}
+        $$
+        
+        for $x=0.4$ and $y=0.8624$.
+        
+        $$
+        \begin{aligned}
+        & y_{2}^{\prime}=-0.5950 \\
+        & y_{2}^{\prime \prime}=-0.6665 \\
+        & y_{2}^{\prime \prime \prime}=4.4579 \\
+        & y_2^{\prime \prime \prime}=-5.4051 \\
+        & y_{3}=y_{2}+\frac{h}{1!}\left(y_{2}^{\prime}\right)+\frac{h^{2}}{2!} y_{2}^{\prime \prime}+\frac{h^{3}}{3!} y_{3}^{\prime \prime}+\frac{h^{4}}{4!} \frac{h^{\prime V}}{4!}+\cdots \\
+        &=0.8 \\
+        &+\frac{0.2}{1!}(-0.5950)+\frac{0.2^{2}}{2!}(8-0.6665)+\frac{0.2^{3}}{3!}(4.54579) \\
+        &=\frac{0.2^{4}}{4!}(-5.4051) \\
+        &=0.7356 .
+        \end{aligned}
+        $$
+        
+        for $x=0.6$ and $y=0.7356$.
+        
+        $$
+        \begin{aligned}
+        y_{3}^{\prime} & =-0.6494 \\
+        y_{3}^{\prime \prime} & =-0.0642 \\
+        y_{3}^{\prime \prime \prime} & =2.6963 \\
+        y_{3}^{\prime v} & =-10.0879 \\
+        y_{4}= & y_{3}+\frac{h}{1!}+\left(y_{3}^{\prime}\right)+\frac{h^{2}}{2!}\left(y_{3}^{\prime \prime}\right)+\frac{h^{3}}{3!}\left(y_{3}^{\prime \prime I}\right)+\frac{h^{4}}{4!}\left(y_{4}^{\text {IV }}\right)+\ldots \\
+        = & 0.7+0.2(-0.6494)+\frac{h^{2}}{2!}(-0.0642)+\ldots\\
+        = & 0.6100 .
+        \end{aligned}
+        $$
+        
+        for $x=0.8$ and $y=0.6100$.
+        
+        $$
+        \begin{aligned}
+        y(1.0) & =0.6+0.2(-0.5953)+\frac{0.2^{2}(-0.4178)}{2!}+\frac{0.2^{3}}{3!}(0.9553) \\
+        & =0.5001
+        \end{aligned}
+        $$
+        
+    \end{solution}
+
+\newpage
+
+    \part Find $y$ at $x=1.1$ and 1.2 ky solving $y^{\prime}=x^{2}+y^{2}, y(1)=2.3$
+
+    \begin{solution}
+        $y^{\prime \prime}=f^{\prime}(x, y)=2 x+2 y y^{\prime}$
+        $$
+        y^{\prime \prime \prime}=2+2 y^{\prime^{2}}+2 y y^{\prime \prime}
+        $$
+        
+        At $x=1.0$ and $y=2.3$ with $h=0.1$
+        
+        $$
+        \begin{aligned}
+        y^{\prime} & =(1.0)^{2}+(2.3)^{2}=6.29 \\
+        y^{\prime \prime} & =2 \times(1.0)+2(2.3)(6.29)=30.934 . \\
+        y^{\prime \prime \prime} & =2+2(6.29)^{2}+2(6.29)(30.934)=223.4246 . \\
+        y\left(x_{0}+h\right) & =y_{0}^{\prime}+h y_{0}^{\prime}+\frac{h^{2}}{2!} y_{0}^{\prime \prime}+\frac{h^{3}}{3!} y_{0}^{\prime \prime \prime}+\cdots \\
+        & =2.3+(0.1)(6.29)+\frac{(0.1)^{2}}{2!}(30.9434)+\frac{(0.1)^{3}}{3!}(223.4246) \\
+        & =3.1209 . \\
+        y_{1} & =3.1209 .
+        \end{aligned}
+        $$
+        
+        at $x=1.1$ and $y=3.1209$ with h = 0.1
+        
+        $$
+        \begin{aligned}
+        & y^{\prime}=(1.1)^{2}+(3.1209)^{2}=10.95 \\
+        & y^{\prime \prime}=2(1.1)+2(3.10209)(10.95)=70.5477 \\
+        & y^{\prime \prime \prime}=2+2(10.95)^{2}+2(10.95)(70.5477)=682.14296 .
+        \end{aligned}
+        $$
+        
+        $$
+        \begin{aligned}
+        y_{2} & =y_{1}+h y_{i}^{\prime}+\frac{h^{2}}{2!} y_{1}^{\prime \prime}+\frac{h^{3}}{3!} y_{1}^{\prime \prime \prime}+\cdots \\
+        & =3.12+(0.1)(10)+(0.1)^{2}(70.5)+(0.1)^{3}(682.14) \\
+        & =4.6823
+        \end{aligned}
+        $$
+        
+        $$
+        y_{2}=4.6823
+        $$
+    \end{solution}
+
+\newpage
+
+    \part Solve the given equation for $y(1.1)$ using taylor series method.$$
+\frac{d y}{d x}=2 y+3 e^{x} \quad, \quad y(0)=0
+$$
+
+
+    \begin{solution}
+        Given that $\frac{d y}{d x}=2 y+3 e^{x}$
+
+$$
+y^{\prime}=2 y+3 e^{x}
+$$
+
+Also
+
+$$
+\begin{aligned}
+& x_{0}=0, y_{0}=0 . \\
+& \begin{aligned}
+y_{0}^{\prime}=2 y_{0}+3 e^{0} & =3 \times 1+0 \\
+& =3 .
+\end{aligned}
+\end{aligned}
+$$
+
+If eq (1) Successively, we get
+
+$$
+\begin{gathered}
+y^{\prime \prime}=2 y^{\prime}+3 e^{x} \\
+y_{0}^{\prime \prime}=2 y_{0}^{\prime} \neq 3 e^{0} \\
+=2 \times 3+3 \times 1 \\
+=9 \\
+y^{\prime \prime \prime}=2 y^{\prime \prime}+3 e^{x} \\
+y_{0}^{\prime \prime \prime}=2 y_{0}^{\prime \prime}+3 e^{0}=2 \times 9+3 \times 1=21 . \\
+y^{\prime \prime}=2 y^{\prime \prime \prime}+3 e^{x}=2 \times 21+3 \times 1=45 .
+\end{gathered}
+$$
+
+and so on.\\
+Now by the taylor's series, we have.
+
+$$
+\begin{aligned}
+y(x) & =y_{0}+\frac{\left(x-x_{0}\right)}{1!} y_{0}^{\prime}+\frac{\left(x-x_{0}\right)^{2}}{2!} y_{0}^{\prime 1}+\frac{\left(x-x_{0}\right)^{3}}{3!} y_{0}^{\prime \prime \prime}+\ldots \\
+& =0+x(3)+\frac{x^{2}}{2!}(9)+\frac{x^{3}}{3!}(21)+\frac{x^{4}}{4!}(45)+\cdots \\
+& =3 x+\frac{9}{2!} x^{2}+\frac{21}{3!} x^{3}+\frac{45}{4!} x^{4}+\cdots
+\end{aligned}
+$$
+
+Hence
+
+$$
+\begin{aligned}
+y(1.1) & =3(1.1)+\frac{9}{2!}(1.1)^{2}+\frac{21}{3}(1.1)^{3}+ \\
+& =16.1487
+\end{aligned}
+$$
+
+    \end{solution}
+\end{parts}
+
+\end{questions}
+
+\end{document}
